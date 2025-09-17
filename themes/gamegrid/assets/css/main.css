@@ -78,12 +78,24 @@ a:hover {
 ############################################################################
 */
 .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 40px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    height: 80px;
 }
 
 .site-header .logo {
@@ -129,7 +141,9 @@ a:hover {
 
 .post-card-themed {
     display: flex;
-    /* Changed to flex to create the horizontal split */
+    /* This creates the 70/30 horizontal split */
+    height: 220px;
+    /* This sets a fixed height for all cards. Adjust if needed. */
     background-color: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -140,8 +154,6 @@ a:hover {
     overflow: hidden;
     color: var(--font-color);
     position: relative;
-    min-height: 180px;
-    /* Reduced min-height slightly */
 }
 
 .post-card-themed:hover {
@@ -153,16 +165,23 @@ a:hover {
     /* Takes 70% of the space */
     display: flex;
     flex-direction: column;
+    /* Stacks header and summary vertically */
     padding: 25px 30px;
-    /* Padding for the text content */
+    overflow: hidden;
+    /* Prevents text from overflowing its container */
 }
 
 .card-header h2 {
     margin: 0;
     color: var(--heading-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Still a good idea to limit title lines */
+    -webkit-box-orient: vertical;
 }
 
-/* The new, shorter separator line under the title */
 .card-header::after {
     content: '';
     display: block;
@@ -170,23 +189,18 @@ a:hover {
     height: 1px;
     background-color: var(--border-color);
     margin-top: 15px;
-    /* Reduced gap after title */
     margin-bottom: 20px;
-    /* Space before summary */
 }
 
 .card-summary {
     flex-grow: 1;
-    /* Takes up remaining vertical space */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* Aligns summary to the top of its available space */
+    /* Fills remaining vertical space in the text area */
+    overflow: hidden;
+    /* Hides summary text that is too long */
 }
 
 .card-summary p {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .card-summary .read-more {
@@ -202,17 +216,12 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Pushes category to bottom */
     align-items: center;
-    /* Centers items horizontally */
     padding: 25px 30px;
     position: relative;
-    /* For the background image */
     border-left: 1px solid var(--border-color);
-    /* The vertical separator line */
 }
 
-/* Position for the category within the logo area */
 .card-logo-area .card-meta {
     font-size: 0.9em;
     text-transform: uppercase;
@@ -220,11 +229,17 @@ a:hover {
     color: #aaa;
     opacity: 0.5;
     margin-top: auto;
-    /* Pushes it to the bottom of the flex container */
 }
 
 /* --- Sidebar Widgets --- */
-.sidebar .widget {
+.sidebar {
+    position: sticky;
+    top: 30px;
+    align-self: start;
+
+}
+
+.widget {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -315,7 +330,6 @@ a:hover {
 
 .post-content code {
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 2px 5px;
     border-radius: 4px;
 }
 
@@ -325,6 +339,16 @@ a:hover {
     margin-left: 0;
     color: #ccc;
     font-style: italic;
+}
+
+/* --- Responsive Images in Content --- */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
 }
 
 /* --- Tables --- */
@@ -382,6 +406,7 @@ a:hover {
     padding: 0 15px;
 }
 
+/* Style for the dropdown menu itself */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -389,9 +414,9 @@ a:hover {
     min-width: 180px;
     padding: 10px;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
@@ -494,4 +519,24 @@ a:hover {
 .theme-minecraft:hover {
     border-color: rgba(89, 168, 57, 1);
     box-shadow: 0 0 25px rgba(89, 168, 57, 0.4), 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Multi-Colored Logo --- */
+.site-header .logo.multi-color-logo {
+    font-weight: bold;
+}
+
+.site-header .logo.multi-color-logo .logo-red {
+    color: #ff4d4d;
+    /* Red */
+}
+
+.site-header .logo.multi-color-logo .logo-white {
+    color: #ffffff;
+    /* White */
+}
+
+.site-header .logo.multi-color-logo .logo-blue {
+    color: #4d94ff;
+    /* Blue */
 }

@@ -1,23 +1,23 @@
 <header class="site-header">
-    <a href="{{ site.BaseURL }}" class="logo multi-color-logo">
-     <span class="logo-red">Ghost</span> <span class="logo-white">Gaming</span> <span class="logo-blue">Nepal</span>
-    </a>
-    <nav>
-        <ul class="main-nav">
-            {{ range .Site.Menus.main }}
-            {{/* Check if the menu item has children */}}
-            <li class="{{ if .HasChildren }}has-dropdown{{ end }}">
-                <a href="{{ .URL | relURL }}">{{ .Name }}</a>
-                {{/* If it has children, create a nested list */}}
-                {{ if .HasChildren }}
-                <ul class="dropdown-menu">
-                    {{ range .Children }}
-                    <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+    <div class="header-container">
+        <a href="{{ site.BaseURL }}" class="logo multi-color-logo">
+            <span class="logo-red">Ghost</span> <span class="logo-white">Gaming</span> <span class="logo-blue">Nepal</span>
+        </a>
+        <nav>
+            <ul class="main-nav">
+                {{ range .Site.Menus.main }}
+                <li class="{{ if .HasChildren }}has-dropdown{{ end }}">
+                    <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+                    {{ if .HasChildren }}
+                    <ul class="dropdown-menu">
+                        {{ range .Children }}
+                        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
                     {{ end }}
-                </ul>
+                </li>
                 {{ end }}
-            </li>
-            {{ end }}
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    </div>
 </header>

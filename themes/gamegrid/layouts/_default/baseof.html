@@ -4,8 +4,9 @@
     {{ partial "head.html" . }}
 </head>
 <body>
+    {{ partial "header.html" . }}
     <div class="container">
-        {{ partial "header.html" . }}
+        
         <div class="main-layout">
             <main class="main-content">
                 {{ block "main" . }}{{ end }}
@@ -14,5 +15,11 @@
         </div>
         {{ partial "footer.html" . }}
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
+    <script>
+      mediumZoom('.post-content img', {
+        background: 'var(--bg-color)'
+      });
+    </script>
 </body>
 </html>
