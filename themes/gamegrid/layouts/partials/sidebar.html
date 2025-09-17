@@ -1,0 +1,30 @@
+<aside class="sidebar">
+    {{/* Display Table of Contents only on single post pages */}}
+{{ if and .IsPage .TableOfContents }}
+    <div class="widget">
+        <h3>On This Page</h3>
+        <nav class="toc">
+            {{ .TableOfContents }}
+        </nav>
+    </div>
+    {{ end }}
+    <div class="widget">
+        <h3>Recent Posts</h3>
+        <ul>
+            {{ range first 5 site.RegularPages }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <div class="widget">
+        <h3>Tags</h3>
+        <div class="tag-cloud">
+            {{ range site.Taxonomies.tags }}
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+            {{ end }}
+        </div>
+    </div>
+</aside>

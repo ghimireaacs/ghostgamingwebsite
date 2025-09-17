@@ -1,0 +1,345 @@
+/* --- Variables & Base Styles (Monochromatic Glass Theme) --- */
+:root {
+  --bg-color: #111;
+  --font-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --primary-color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  /* A subtle gradient adds depth for the glass effect to work on */
+  background-image: radial-gradient(circle, #333, #111);
+  color: var(--font-color);
+  font-family: var(--font-family);
+  margin: 0;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* --- Header & Footer --- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 40px;
+}
+
+.site-header .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--heading-color);
+}
+
+.site-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color);
+  color: #888;
+}
+
+/* --- Glassmorphism Card Style (Homepage & Lists) ✨ --- */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.post-card {
+  /* The Glass Effect */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari */
+
+  /* Styling */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  display: block;
+  color: var(--font-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  /* Added border-color here */
+}
+
+.post-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.post-card h2 {
+  color: var(--heading-color);
+  margin-top: 0;
+}
+
+.post-card .read-more {
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--heading-color);
+}
+
+/* --- Single Post & Content Styling --- */
+.post-header h1 {
+  font-size: 2.8em;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  color: #aaa;
+}
+
+.post-content {
+  font-size: 1.1em;
+}
+
+.post-content h2,
+.post-content h3 {
+  color: var(--heading-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+}
+
+.post-content code {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--border-color);
+  padding-left: 15px;
+  margin-left: 0;
+  color: #ccc;
+  font-style: italic;
+}
+
+/* --- Table Styles & Blurred Shadow --- */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+
+  /* The requested blurred shadow */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+
+  /* Give the table the glass effect too! */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  /* Important for border-radius to work on tables */
+}
+
+.post-content th,
+.post-content td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.post-content thead tr {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--heading-color);
+}
+
+.post-content tbody tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-content tbody tr:last-of-type {
+  border-bottom: none;
+}
+
+/* --- Main Layout with Sidebar --- */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  /* Changed from 280px */
+  gap: 30px;
+}
+
+/* On smaller screens, stack the sidebar below the content */
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    /* Single column */
+  }
+}
+
+
+/* --- Sidebar & Widget Styles --- */
+.sidebar .widget {
+  /* Re-using the glass effect for consistency */
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .widget h3 {
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--heading-color);
+}
+
+.sidebar .widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .widget ul li a {
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: padding-left 0.3s ease;
+}
+
+.sidebar .widget ul li:last-child a {
+  border-bottom: none;
+}
+
+.sidebar .widget ul li a:hover {
+  padding-left: 10px;
+  opacity: 1;
+  /* Override default link opacity hover */
+}
+
+/* --- Tag Cloud Widget Style --- */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-cloud a {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.tag-cloud a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+
+/* --- Tag-Based Border Colors --- */
+
+/* For posts tagged "valorant" */
+.post-card.valorant-border {
+  border-color: rgba(253, 69, 86, 0.7);
+  /* Subtle Valorant Red */
+}
+
+/* For posts tagged "gta" */
+.post-card.gta-border {
+  border-color: rgba(250, 179, 51, 0.7);
+  /* Subtle GTA Gold */
+}
+
+/* Make the border glow more on hover */
+.post-card.valorant-border:hover {
+  border-color: rgba(253, 69, 86, 1);
+}
+
+.post-card.gta-border:hover {
+  border-color: rgba(250, 179, 51, 1);
+}
+
+/* --- Navigation & Dropdown Styles --- */
+.main-nav,
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav>li {
+  display: inline-block;
+  position: relative;
+  /* This is crucial for positioning the dropdown */
+  padding: 0 15px;
+}
+
+/* Style for the dropdown menu itself */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  padding: 10px;
+  z-index: 100;
+
+  /* Use our glass effect! */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+  /* Hide the dropdown by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+/* Show the dropdown on hover */
+.has-dropdown:hover>.dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Style for links inside the dropdown */
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+/* Add a little arrow to indicate a dropdown */
+.has-dropdown>a::after {
+  content: ' ▾';
+  font-size: 0.8em;
+}

@@ -1,0 +1,46 @@
+baseURL = 'https://ghostgamingnp.org/'
+languageCode = 'en-us'
+title = 'Ghost Gaming Nepal'
+theme = 'gamegrid'
+
+
+[menu]
+  # Main top-level link
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  # This is the parent for our dropdown
+  [[menu.main]]
+    name = "Categories"
+    identifier = "categories" # An ID for this menu item
+    url = "/categories/"
+    weight = 2
+
+  # A child menu item
+  [[menu.main]]
+    name = "GTA"
+    parent = "categories" # Belongs to the "categories" parent
+    url = "/tags/gta/"
+    weight = 1
+
+  # Another child menu item
+  [[menu.main]]
+    name = "VALORANT"
+    parent = "categories"
+    url = "/tags/valorant/"
+    weight = 2
+
+  # Another child menu item
+  [[menu.main]]
+    name = "Minecraft"
+    parent = "categories"
+    url = "/tags/minecraft/"
+    weight = 3
+
+  # Another top-level link
+  [[menu.main]]
+    name = "All Posts"
+    url = "/posts/"
+    weight = 3

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ghost Gaming Nepal</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Ghost Gaming Nepal</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Sep 2025 00:20:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GTA V Online Missions</title>
+      <link>http://localhost:1313/posts/gta-online-missions/</link>
+      <pubDate>Wed, 17 Sep 2025 00:20:00 +1000</pubDate>
+      <guid>http://localhost:1313/posts/gta-online-missions/</guid>
+      <description>Contact Missions Contact Missions are standalone jobs given by various characters in the GTA Online world. These missions can be initiated through a contact&amp;rsquo;s phone call, by navigating to the mission&amp;rsquo;s marker on the map, or through the Online menu.&#xA;Name Description Location Number of Players A Titan of a Job Steal a Titan transport plane from a hangar at LSIA and deliver it to Sandy Shores Airfield. Los Santos International Airport 1-6 Rooftop Rumble Disrupt a meeting between the FIB and the Professionals and steal a document-filled briefcase.</description>
+    </item>
+    <item>
+      <title>GTA V Online Stats Building Tips</title>
+      <link>http://localhost:1313/posts/gta-v-stats/</link>
+      <pubDate>Wed, 17 Sep 2025 00:20:00 +1000</pubDate>
+      <guid>http://localhost:1313/posts/gta-v-stats/</guid>
+      <description>How to Increase Your Character Stats in GTA Online Leveling up your character&amp;rsquo;s skills will make you more effective in various aspects of the game, from combat to maneuverability. Here’s a breakdown of how to improve each stat:&#xA;💪 Strength The Strength stat affects your melee damage, durability (reducing damage from falls and accidents), and your ability to climb ladders faster and perform better in sports like tennis and golf.</description>
+    </item>
+    <item>
+      <title>Valorant Crosshairs</title>
+      <link>http://localhost:1313/posts/valorant-crosshairs/</link>
+      <pubDate>Wed, 17 Sep 2025 00:20:00 +1000</pubDate>
+      <guid>http://localhost:1313/posts/valorant-crosshairs/</guid>
+      <description>Here are the most common crosshairs used by our team in Valorant.&#xA;Small DOT (OG) -&#xA;0;s;1;P;o;1;d;1;0b;0;1b;0;S;d;0 Big DOT -&#xA;0;P;d;1;f;0;0t;4;0l;1;0o;0;0a;1;0f;0;1b;0 Small Cross -&#xA;0;P;c;5;h;0;f;0;0l;4;0o;0;0a;1;0f;0;1b;0 Small Cross (small wala) -&#xA;0;P;c;5;h;0;f;0;0l;3;0v;3;0o;0;0a;1;0f;0;1b;0 Small Cross (but better) -&#xA;0;s;1;P;h;0;f;0;0l;4;0o;0;0a;1;0f;0;1b;0;S;s;1.177;o;1 Big Cross -&#xA;0;c;1;s;1;P;c;2;u;000000FF;h;0;d;1;z;1;a;0;0l;4;0v;5;0o;2;0a;1;0m;1;0f;0;0s;0;1b;0 Tiny Cross (CS) -&#xA;0;s;1;P;c;5;u;000000FF;0l;2;0v;3;0o;2;0a;1;0f;0;1b;0;S;c;0;s;0.75;o;1 No Crosshair -&#xA;0;c;1;s;1;P;h;0;0b;0;1b;0;S;s;1.483;o;0.493 DOT ( blue naramro) -&#xA;0;s;1;P;c;5;u;000000FF;h;0;f;0;0l;2;0o;0;0a;1;0f;0;1b;0;S;t;000000FF;s;0.677;o;1 Very Big Cross -&#xA;0;P;u;000000FF;h;0;0l;8;0v;17;0a;1;0f;0;1b;0 Best for Stretched (Moving) -&#xA;0;P;u;000000FF;h;0;0l;4;0v;5;0o;1;0a;1;0m;1;0s;0.02;0e;0.1;1b;0 Hexagonal Cross -</description>
+    </item>
+  </channel>
+</rss>

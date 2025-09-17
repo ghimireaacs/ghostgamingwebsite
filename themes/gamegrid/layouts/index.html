@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="post-grid-single-column">
+    {{ range site.RegularPages }}
+
+    {{/* Logic to set the theme class remains the same */}}
+    {{ $themeClass := "" }}
+    {{ if in .Params.tags "valorant" }}
+        {{ $themeClass = "theme-valorant" }}
+    {{ else if in .Params.tags "gta" }}
+        {{ $themeClass = "theme-gta" }}
+    {{ else if in .Params.tags "minecraft" }}
+        {{ $themeClass = "theme-minecraft" }}
+    {{ end }}
+
+{{/* New Card Structure with Text on Left */}}
+  <a href="{{ .Permalink }}" class="post-card-themed {{ $themeClass }}">
+          <div class="card-text-area"> {{/* This div will be 70% wide */}}
+              <div class="card-header">
+                <h2>{{ .Title }}</h2>
+              </div>
+              <div class="card-summary">
+                <p>
+                    {{ if .Params.description }}
+                        {{ .Params.description }}
+                    {{ else }}
+                        {{ .Plain | truncate 180 }}
+                    {{ end }}
+                </p>
+                <span class="read-more">Read More &rarr;</span>
+              </div>
+          </div>
+          {{/* This div will be 30% wide and contain the background logo */}}
+          <div class="card-logo-area">
+             {{ with .Params.categories }}
+             <div class="card-meta">
+               <span></span>
+             </div>
+             {{ end }}
+          </div>
+      </a>
+    {{ end }}
+</div>
+{{ end }}
